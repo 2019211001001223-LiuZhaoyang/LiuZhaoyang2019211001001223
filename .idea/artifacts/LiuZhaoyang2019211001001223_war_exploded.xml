@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="LiuZhaoyang2019211001001223:war exploded">
+    <output-path>$PROJECT_DIR$/target/LiuZhaoyang2019211001001223-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>LiuZhaoyang2019211001001223</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="LiuZhaoyang2019211001001223" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/LiuZhaoyang2019211001001223-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="LiuZhaoyang2019211001001223/web/Web" />
+    </root>
+  </artifact>
+</component>
