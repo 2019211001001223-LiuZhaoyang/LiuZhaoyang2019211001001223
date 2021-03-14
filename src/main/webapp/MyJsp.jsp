@@ -11,11 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-<a href="http://www.ecjtu.jx.cn/">go to ecjtu</a>
 <form>
-    Name:<input type="text" name="name"><br/>
-    ID:<input type="text" name="id"><br/>
-    <input type="submit" value="Send data to server"/>
+    UserName :<input type="text" name="username"><br/>
+    password :<input type="text" name="password"><br/>
+    Email :<input type="text" name="email"><br/>
+    Date of Birth :<input type="text" name="Date of Birth"><br/>
+    <input type="submit" value="Register"/>
 </form>
 </body>
 </html>
