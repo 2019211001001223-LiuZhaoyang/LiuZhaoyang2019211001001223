@@ -3,7 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
+
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;DatabaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123456</param-value>
+    </context-param>
+   <!-- <servlet>
         <servlet-name>LiuZhaoyang</servlet-name>
         <servlet-class>com.LiuZhaoyang.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
@@ -28,32 +45,19 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>JDBCDemoServlet</servlet-name>
-        <servlet-class>com.LiuZhaoyang.week4.demo.JDBCDemoServlet</servlet-class>
-        <!--//String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        //String url="jdbc:sqlserver://localhost:databaseName=userdb;";
-        //String username="sa";
-        //String password="123456";-->
-        <init-param>
-            <param-name>driver</param-name>
-            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
-        </init-param>
-        <init-param>
-            <param-name>url</param-name>
-            <param-value>jdbc:sqlserver://localhost:databaseName=userdb;</param-value>
-        </init-param>
-        <init-param>
-            <param-name>username</param-name>
-            <param-value>sa</param-value>
-        </init-param>
-        <init-param>
-            <param-name>password</param-name>
-            <param-value>123456</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
+        <servlet-name>ConfigdemoServlet</servlet-name>
+        <servlet-class>com.LiuZhaoyang.week4.demo.ConfigdemoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>JDBCDemoServlet</servlet-name>
-        <url-pattern>/jdbc</url-pattern>
+        <servlet-name>ConfigdemoServlet</servlet-name>
+        <url-pattern>/Config</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.LiuZhaoyang.week5.demo.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping> -->
 </web-app>

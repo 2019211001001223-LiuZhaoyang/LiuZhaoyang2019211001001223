@@ -5,18 +5,20 @@
   Time: 20:14
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>Title</title>
+    <base href="<%=basePath%>">
+    <h1>My JSP page</h1>
 </head>
 <body>
-<form>
-    UserName :<input type="text" name="username"><br/>
-    password :<input type="text" name="password"><br/>
-    Email :<input type="text" name="email"><br/>
-    Date of Birth :<input type="text" name="Date of Birth"><br/>
-    <input type="submit" value="Register"/>
-</form>
+<%@include file="header.jsp" %>
+This is my JSP page. <br>
+<br/>
+<%@include file="footer.jsp" %>
 </body>
 </html>
+
