@@ -20,6 +20,8 @@
         <param-name>password</param-name>
         <param-value>123456</param-value>
     </context-param>
+<<<<<<< HEAD
+=======
    <!-- <servlet>
         <servlet-name>LiuZhaoyang</servlet-name>
         <servlet-class>com.LiuZhaoyang.week2.demo.HelloWorldServlet</servlet-class>
@@ -52,12 +54,56 @@
         <servlet-name>ConfigdemoServlet</servlet-name>
         <url-pattern>/Config</url-pattern>
     </servlet-mapping>
+>>>>>>> origin/master
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.LiuZhaoyang.week5.demo.LoginServlet</servlet-class>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-class>com.LiuZhaoyang.week6.demo.JDBCDemoServlet</servlet-class>
     </servlet>
+<<<<<<< HEAD
+    <!-- <servlet>
+         <servlet-name>LiuZhaoyang</servlet-name>
+         <servlet-class>com.LiuZhaoyang.week2.demo.HelloWorldServlet</servlet-class>
+     </servlet>
+     <servlet>
+         <servlet-name>LifeCycleServlet</servlet-name>
+         <servlet-class>com.LiuZhaoyang.week3.demo.LifeCycleServlet</servlet-class>
+     </servlet>
+     <servlet>
+         <servlet-name>RegisterServlet</servlet-name>
+         <servlet-class>com.LiuZhaoyang.week3.demo.RegisterServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>LiuZhaoyang</servlet-name>
+         <url-pattern>/hello</url-pattern>
+     </servlet-mapping>
+     <servlet-mapping>
+         <servlet-name>LifeCycleServlet</servlet-name>
+         <url-pattern>/life</url-pattern>
+     </servlet-mapping>
+     <servlet-mapping>
+         <servlet-name>RegisterServlet</servlet-name>
+         <url-pattern>/register</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>ConfigdemoServlet</servlet-name>
+         <servlet-class>com.LiuZhaoyang.week4.demo.ConfigdemoServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>ConfigdemoServlet</servlet-name>
+         <url-pattern>/Config</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>LoginServlet</servlet-name>
+         <servlet-class>com.LiuZhaoyang.week5.demo.LoginServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>LoginServlet</servlet-name>
+         <url-pattern>/Login</url-pattern>
+     </servlet-mapping> -->
+=======
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping> -->
+>>>>>>> origin/master
 </web-app>
