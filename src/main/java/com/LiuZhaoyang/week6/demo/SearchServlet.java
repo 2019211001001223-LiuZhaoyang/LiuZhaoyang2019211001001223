@@ -1,4 +1,5 @@
 package com.LiuZhaoyang.week6.demo;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -31,3 +32,4 @@ public class SearchServlet extends HttpServlet {
 
     }
 }
+

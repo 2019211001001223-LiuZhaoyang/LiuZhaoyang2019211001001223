@@ -1,3 +1,4 @@
+
 package com.LiuZhaoyang.week6.demo;
 
 import javax.servlet.*;
@@ -10,9 +11,10 @@ public class RedirectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //		response.sendRedirect("index.jsp");
-//		response.sendRedirect("/2019211001001223LiuZhaoyang_war_exploded/index.jsp");
-        response.sendRedirect("http://www.baidu.com");
+        System.out.println("before redirect");
+        //response.sendRedirect("index.jsp");
+        System.out.println("after redirect");
+        //response.sendRedirect("");
     }
 
     @Override
@@ -20,3 +22,4 @@ public class RedirectServlet extends HttpServlet {
         doGet(request,response);
     }
 }
+

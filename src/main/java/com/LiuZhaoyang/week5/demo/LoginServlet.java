@@ -1,53 +1,102 @@
 package com.LiuZhaoyang.week5.demo;
 
-import javax.servlet.*;
+import com.LiuZhaoyang.dao.UserDao;
+import com.LiuZhaoyang.model.User;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.util.Date;
-
-
 @WebServlet(name = "LoginServlet",value = "/login")
 public class LoginServlet extends HttpServlet {
-    public Connection dbConn;
-    @Override
+    Connection con = null;
     public void init() throws ServletException {
+        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
+        String username="sa";
+        String password="123456";
+
+
+
         try {
-            Class.forName(getServletConfig().getServletContext().getInitParameter("driver"));
-            dbConn= DriverManager.getConnection(getServletConfig().getServletContext().getInitParameter("url"),getServletConfig().getServletContext().getInitParameter("Username"),getServletConfig().getServletContext().getInitParameter("Password"));
-            System.out.println(dbConn);
-        } catch (Exception e) {
+            Class.forName(driver);
+            con= DriverManager.getConnection(url,username,password);
+            System.out.println("init()-->"+con);
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            System.out.println("1连接数据库失败！");
         }
     }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username=req.getParameter("username");
-        String password=req.getParameter("password");
-        Statement createDbStatement = null;
-        PrintWriter writer=resp.getWriter();
-        boolean find=false;
+        UserDao userDao = new UserDao();
         try {
-            createDbStatement = dbConn.createStatement();
-            String dbRequire="select * from usertable where username='"+username+"' and password='"+password+"'";
-            System.out.println(dbRequire);
-            ResultSet resultDb=createDbStatement.executeQuery(dbRequire);
-            if(resultDb.next()) {
-                find=true;
-                writer.println("Login success\nwelcome,"+username);
+            User user = userDao.findByUsernamePassword(con,username,password);
+            if(user!=null) {
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
+            } else {
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
-        if(!find)
-            writer.println("Wrong username or password");
+
+        /*
+        String sqlQuery="select * from userTB where username=? and password=?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(sqlQuery);
+            ps.setString(1,username);
+            ps.setString(2,password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                //out.println("<h1>Login Successful ! </h1><br/>");
+                //out.println("<h1>Welcome "+ username + "</h1><br/>");
+                request.setAttribute("id",rs.getInt("id"));
+                request.setAttribute("username",rs.getString("username"));
+                request.setAttribute("password",rs.getString("password"));
+@@ -65,18 +80,18 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
+                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
+            } else {
+                //out.println("<h1>Login Failed ! </h1><br/>");
+                //out.println("<h1>Username or Password Error ! </h1><br/>");
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("Login.jsp").forward(request,response);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        */
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request,response);
+        //doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+    }
+
+    public void destroy() {
+        super.destroy();
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

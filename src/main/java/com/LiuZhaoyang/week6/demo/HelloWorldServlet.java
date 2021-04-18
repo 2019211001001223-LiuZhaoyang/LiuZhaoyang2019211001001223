@@ -8,8 +8,8 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 public class HelloWorldServlet extends HttpServlet {
-    String name = "JieMengyao";
-    String id = "2019211001001201";
+    String name = "LiuZhaoyang";
+    String id = "2019211001001223";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
