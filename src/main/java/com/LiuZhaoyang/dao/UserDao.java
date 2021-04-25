@@ -3,10 +3,8 @@ package com.LiuZhaoyang.dao;
 import com.LiuZhaoyang.model.User;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -61,19 +59,16 @@ public class UserDao implements IUserDao{
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        String sql="update usertable set email=?,gender=?,birthdate=? where username=? and password=?";
-        PreparedStatement ps = null;
-        try {
-            ps = con.prepareStatement(sql);
-            ps.setString(1,user.getEmail());
-            ps.setString(2,user.getGender());
-            ps.setDate(3, (java.sql.Date) user.getBirthDate());
-            ps.setString(4, (String) user.getUsername());
-            ps.setString(5,user.getPassword());
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try{
+            Statement createDbStatement = con.createStatement();
+            String dbRequire="update usertable set username='"+user.getUsername()+"',password='"+user.getPassword()+"',email='"+user.getEmail()+"',gender='"+user.getGender()+"',birthdate='"+user.getBirthDate()+"' where id="+user.getId();
+            createDbStatement.executeUpdate(dbRequire);
+            System.out.println("update "+user.getId()+"success");
+            return 1;
+        }catch(Exception e) {
+            System.out.println(e);
         }
-        return ps.executeUpdate();
+        return 0;
     }
 
     @Override

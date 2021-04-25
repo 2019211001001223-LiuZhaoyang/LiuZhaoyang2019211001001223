@@ -8,23 +8,19 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 @WebServlet(name = "LoginServlet",value = "/login")
 public class LoginServlet extends HttpServlet {
-    Connection con = null;
+    Connection con=null;
+    @Override
     public void init() throws ServletException {
         String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
         String username="sa";
         String password="123456";
-
-
-
         try {
             Class.forName(driver);
             con= DriverManager.getConnection(url,username,password);
@@ -34,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("1连接数据库失败！");
         }
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
@@ -43,9 +40,29 @@ public class LoginServlet extends HttpServlet {
         try {
             User user = userDao.findByUsernamePassword(con,username,password);
             if(user!=null) {
-                request.setAttribute("user",user);
+
+                String rememberMe=request.getParameter("rememberMe");
+                if (rememberMe!=null &&rememberMe.equals("1"))
+
+                {
+                    Cookie usernameCookie=new Cookie("cUsername",user.getUsername().trim());
+                    Cookie passwordCookie=new Cookie("cPassword",user.getPassword().trim());
+                    Cookie rememberMeCookie=new Cookie("rememberMeVal",request.getParameter("rememberMe").trim());
+                    usernameCookie.setMaxAge(60*60*24*50);
+                    passwordCookie.setMaxAge(60*60*24*50);
+                    rememberMeCookie.setMaxAge(60*60*24*50);
+                    System.out.println(usernameCookie.getValue());
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+                }
+                HttpSession session=request.getSession();
+                System.out.println(session.getId());
+                session.setMaxInactiveInterval(60*60);
+                session.setAttribute("user",user);
                 request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
-            } else {
+            }
+            else {
                 request.setAttribute("message","Username or Password Error!!!");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
             }

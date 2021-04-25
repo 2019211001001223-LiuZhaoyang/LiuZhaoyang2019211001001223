@@ -12,7 +12,7 @@
     password :<input type="text" name="password"><br/>
     Email :<input type="text" name="email"><br/>
     Gender: <input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="Female">Female<br/>
-    Date of Birth :<input type="text" name="birthDate"><br/>
+    Date of Birth :<input type="text" name="birthdate"><br/>
     <input type="submit" value="Register"/>
 </form>
 <%@include file="header.jsp"%>

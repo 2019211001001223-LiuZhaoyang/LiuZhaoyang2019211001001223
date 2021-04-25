@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String email;
     private String gender;
-    private Date birthDate;
+    private Date birthdate;
 
     public User() {
 
@@ -21,7 +21,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.gender = gender;
-        this.birthDate = birthDate;
+        this.birthdate = birthdate;
     }
 
     public int getId() {
@@ -67,11 +67,11 @@ public class User {
     }
 
     public Date getBirthDate() {
-        return birthDate;
+        return birthdate;
     }
 
     public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+        this.birthdate = birthdate;
     }
 
     //
@@ -83,7 +83,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
-                ", birthDate=" + birthDate +
+                ", birthDate=" + birthdate +
                 '}';
     }
 

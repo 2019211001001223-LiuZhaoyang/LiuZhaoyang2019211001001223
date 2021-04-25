@@ -37,11 +37,11 @@
 
 <table border="1" >
     <tr>
-        <td>Username</td><td><%=request.getAttribute("Username")%></td> </tr>
-    <td>Password</td><td><%=request.getAttribute("Username")%></td> </tr>
-    <td>Email</td> <td><%=request.getAttribute("Email")%></td> </tr>
-    <td>Gender</td><td><%=request.getAttribute("Gender")%></td> </tr>
-    <td>Birthdate</td> <td><%=request.getAttribute("Birthdate")%></td>
+        <td>Username</td><td><%=request.getAttribute("username")%></td> </tr>
+    <td>Password</td><td><%=request.getAttribute("password")%></td> </tr>
+    <td>Email</td> <td><%=request.getAttribute("email")%></td> </tr>
+    <td>Gender</td><td><%=request.getAttribute("gender")%></td> </tr>
+    <td>Birthdate</td> <td><%=request.getAttribute("birthdate")%></td>
     </tr>
 </table>
 
