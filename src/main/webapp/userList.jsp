@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%--
   Created by IntelliJ IDEA.
   User: 86139
@@ -48,4 +47,3 @@
 
 <%@include file="footer.jsp" %>
 
->>>>>>> origin/master
