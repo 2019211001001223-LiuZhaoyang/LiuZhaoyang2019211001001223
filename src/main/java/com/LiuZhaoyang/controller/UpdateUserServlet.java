@@ -13,31 +13,31 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.sql.Date;
+import java.util.Date;
 import java.util.zip.Inflater;
 
 @WebServlet(name = "UpdateUserServlet",value="/updateUser")
 public class UpdateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println("in");
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-        String email=request.getParameter("email");
-        String gender=request.getParameter("gender");
+        String mail=request.getParameter("email");
+        String sex=request.getParameter("sex");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date birth = Date.valueOf(request.getParameter("birth"));
-
-        User user=new User();
-        UserDao userDao=new UserDao();
-        user.setId(id);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setGender(gender);
-        user.setEmail(email);
-        user.setBirthDate(birth);
-
+        Date birth= null;
         try {
-            userDao.updateUser((Connection)getServletContext().getAttribute("con"),user);
+            System.out.println(request.getParameter("birth").trim());
+
+            birth = simpleDateFormat.parse(request.getParameter("birth").trim());
+        } catch (ParseException e) {
+            System.out.println(e);
+        }
+        String id=request.getParameter("id");
+        User u=new User(Integer.valueOf(id),username,password,mail,sex,birth);
+        UserDao userDao=new UserDao();
+        try {
+            userDao.updateUser((Connection)getServletContext().getAttribute("con"),u);
         } catch (SQLException e) {
             System.out.println(e);
         }
