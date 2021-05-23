@@ -57,7 +57,7 @@ public class Category {
     public void setActive(Boolean active) {
         this.active = active;
     }
-    public List<Category> findAllCategory(Connection con) throws SQLException {
+    public static List<Category> findAllCategory(Connection con) throws SQLException {
         String dbRequire="select * from Category";
         List<Category> list=new ArrayList<Category>();
         try{
