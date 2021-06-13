@@ -105,5 +105,13 @@
         <filter-name>LoggerFilter</filter-name>
         <url-pattern>/hello</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>LiuZhaoyangFilter</filter-name>
+        <filter-class>com.lab2.LiuZhaoyangFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LiuZhaoyangFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+    </filter-mapping>
 
 </web-app>
