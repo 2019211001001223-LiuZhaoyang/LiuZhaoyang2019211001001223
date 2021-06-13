@@ -11,28 +11,48 @@
   <component name="ChangeListManager">
     <list default="true" id="b6506cd8-3f3f-4de9-8430-11cbda73bf2d" name="Default Changelist" comment="11.HW Week11 Commit">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/AccountDetailsServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/AddProductServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/AdminHomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/AdminOrderListServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/ContactUsServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/OrderDetailsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/OrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/ProductDetailServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/ProductListServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/controller/UpdateUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/dao/IOrderDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/dao/IProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/dao/OrderDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/dao/ProductDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/filter/AuthFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/filter/HelloFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/filter/LoggerFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/model/Payment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/LiuZhaoyang/model/Product.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/lab1/Dog.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/lab1/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab2/LiuZhaoyangFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab2/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lab2/LoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accountDetails.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/addProduct.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/orderList.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/productList.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/userList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/contactUs.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orderSuccess.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/productDetails.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/shop.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/updateUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/updateUserView.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/animate.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/font-awesome.min.css" afterDir="false" />
@@ -126,6 +146,11 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/lab1/assignment2/login.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/lab1/assignment2/validate.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/lab1/assignment2/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/lab2/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/lab2/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/lab2/validate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/lab2/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderDetails.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/LiuZhaoyang2019211001001223-1.0-SNAPSHOT/WEB-INF/classes/com/LiuZhaoyang/controller/AdminHomeServlet.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/LiuZhaoyang2019211001001223-1.0-SNAPSHOT/WEB-INF/classes/com/LiuZhaoyang/controller/LogoutServlet.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/LiuZhaoyang2019211001001223-1.0-SNAPSHOT/WEB-INF/classes/com/LiuZhaoyang/controller/UpdateUserServlet.class" afterDir="false" />
@@ -342,19 +367,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/lab1" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.LiuZhaoyang.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\java\com\lab1" />
-      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp\lab1" />
-      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp\lab1\assignment2" />
-      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp\images\cart" />
       <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp" />
+      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\java\com\LiuZhaoyang\model" />
+      <recent name="C:\Users\86139\IdeaProjects\LiuZhaoyang2019211001001223\src\main\java\com\LiuZhaoyang\dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.LiuZhaoyang.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -485,7 +516,7 @@
       <workItem from="1621759521836" duration="13148000" />
       <workItem from="1621787852648" duration="218000" />
       <workItem from="1622379677593" duration="4710000" />
-      <workItem from="1622696822812" duration="5583000" />
+      <workItem from="1622696822812" duration="26547000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1615120119393</created>
